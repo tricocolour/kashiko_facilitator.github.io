@@ -280,6 +280,25 @@
   var s=document.getElementById('sticky');
   function f(){ if(window.scrollY>520){s.classList.add('show')}else{s.classList.remove('show')} }
   window.addEventListener('scroll',f,{passive:true}); f();
+
+  // ふわっと現れる演出
+  if(!('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('js');
+  var targets=[].slice.call(document.querySelectorAll('main section .wrap > *, main section .wrap .stack > *, .scenes > *, .voices > *, .steps > *, .changes > *'));
+  var seen=[];
+  targets.forEach(function(el){
+    if(seen.indexOf(el)>-1) return; seen.push(el);
+    if(el.classList.contains('hero')) return;
+    el.classList.add('reveal');
+    var p=el.parentElement;
+    if(p && /scenes|voices|steps|changes/.test(p.className)){
+      el.style.transitionDelay=(Array.prototype.indexOf.call(p.children,el)%3)*90+'ms';
+    }
+  });
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:0.12,rootMargin:'0px 0px -6% 0px'});
+  seen.forEach(function(el){ io.observe(el); });
 })();
 </script>
 </body>
