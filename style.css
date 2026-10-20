@@ -207,3 +207,122 @@ span.ko,span.kc{display:inline!important}
 .hero .sub{font-size:16px;font-weight:500;line-height:1.8;color:var(--ink-soft)}
 .hero .note{font-size:12px}
 @media (min-width:820px){.hero .sub{font-size:18px}.hero-course{font-size:14px}}
+
+/* 見出し的な短い文も丸ゴシックに */
+.hero .sub,.hero-course,.worry-end,.approach-title{font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif}
+.hero .sub{font-weight:700}
+
+/* 04 メソッド：3つのアプローチに補足文をつける */
+.method-intro{margin:0 auto}
+.approach-lead{text-align:center;font-weight:500;margin-bottom:22px;font-size:15px;line-height:1.9}
+.approaches{max-width:none;margin:0;gap:28px}
+.ap{display:flex;flex-direction:column;gap:12px;max-width:440px;margin:0 auto;width:100%}
+.ap img{filter:drop-shadow(0 6px 14px rgba(90,70,0,.14))}
+.ap-text{font-size:14.5px;line-height:1.8;border-left:5px solid var(--brown);padding:2px 0 2px 12px;font-weight:500}
+.approach-note{margin-top:28px;background:var(--lemon);border-radius:20px;padding:18px 20px;font-size:14.5px;line-height:1.85;font-weight:500;box-shadow:var(--shadow-s)}
+.power-block{margin-top:48px;text-align:center}
+.power-lead{font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;font-weight:700;font-size:18px;margin-bottom:16px}
+.power-block .pyramid{margin:0 auto}
+.power-note{margin-top:18px;text-align:left;background:#e8f0e3;border-radius:20px;padding:16px 20px;font-size:14.5px;line-height:1.85;max-width:520px;margin-left:auto;margin-right:auto}
+@media (min-width:820px){
+  .method-intro{text-align:center}
+  .approaches{grid-template-columns:repeat(3,1fr);gap:24px}
+  .ap{max-width:none}
+  .approach-note{text-align:center;font-size:15.5px;padding:22px 32px}
+  .power-lead{font-size:22px}
+}
+.approach-lead,.power-lead{text-wrap:balance}
+
+/* 3つのアプローチ画像を小さく */
+.ap{max-width:280px}
+@media (min-width:820px){.ap{max-width:300px;margin:0 auto}.approaches{gap:20px}}
+
+/* 講座内容・理由・選ばれる理由・教材・流れ */
+.check-list{list-style:none;margin:0;padding:22px 24px;display:flex;flex-direction:column;gap:10px}
+.check-list li{position:relative;padding-left:26px;font-weight:500;line-height:1.7}
+.check-list li::before{content:"";position:absolute;left:2px;top:.5em;width:12px;height:12px;border-radius:50%;background:var(--brown)}
+.reason-photo{width:100%;max-width:520px;height:auto;margin:20px auto 22px;border-radius:22px;box-shadow:var(--shadow-m)}
+.reasons{display:grid;gap:14px}
+.reason{background:#fff;border:3px solid var(--brown);border-radius:18px;padding:16px 18px;box-shadow:var(--shadow-s)}
+.reason h3,.why-item h4{font-size:17px;line-height:1.5;margin-bottom:6px;color:var(--ink)}
+.reason p{font-size:14.5px;line-height:1.8}
+.why{margin-top:48px}
+.why-title{text-align:center;font-size:21px;line-height:1.6;margin-bottom:20px}
+.why-item{background:#fff;border-radius:18px;box-shadow:var(--shadow-s);padding:16px 20px;margin-bottom:14px}
+.why-item h4{color:var(--accent);font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;margin:0 0 6px;padding-bottom:6px;border-bottom:2px solid var(--brown)}
+.why-item p{font-size:14.5px;line-height:1.8}
+.material-photo{width:100%;height:auto;border-radius:16px;margin:16px 0 12px}
+.material{text-align:left;font-size:14.5px}
+.material ul{margin:6px 0 0;padding-left:1.2em;line-height:1.75}
+.mini{font-size:12.5px;color:var(--ink-soft)}
+li .mini{display:inline-block;margin-left:6px;padding:0 8px;border-radius:999px;background:var(--lemon);color:var(--ink)}
+.option{width:100%;text-align:left;padding:16px 20px}
+.option p{font-size:14.5px;line-height:1.75}
+.opt-price{font-weight:700}
+.flow{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
+.flow li{display:flex;align-items:center;gap:14px;background:#fff;border-radius:16px;box-shadow:var(--shadow-s);padding:14px 18px;position:relative}
+.flow li:not(:last-child)::after{content:"▼";position:absolute;left:30px;bottom:-14px;font-size:11px;color:var(--brown);line-height:1}
+.flow li span{flex:none;width:32px;height:32px;border-radius:50%;background:var(--brown);color:#fff;font-weight:700;display:grid;place-items:center;font-family:"Zen Maru Gothic",sans-serif}
+.flow li b{font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif}
+.flow-end{text-align:center;margin-top:22px;font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;font-weight:700;font-size:18px;line-height:1.7}
+@media (min-width:820px){
+  .reasons{grid-template-columns:1fr 1fr;gap:18px}
+  .why-title{font-size:26px}
+  .flow{flex-direction:row;gap:14px}
+  .flow li{flex:1;flex-direction:column;text-align:center;padding:18px 10px}
+  .flow li:not(:last-child)::after{content:"▶";left:auto;right:-14px;bottom:auto;top:50%;transform:translateY(-50%)}
+}
+
+/* ---- アイコンと図形で見せる ---- */
+body{line-break:strict;word-break:auto-phrase;text-wrap:pretty}
+.ph{display:inline-block}
+.ic{flex:none;width:46px;height:46px;border-radius:50%;background:#e8f0e3;display:grid;place-items:center;color:var(--accent)}
+.ic svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* 基礎講座で学ぶこと */
+.learn{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+.learn-item{background:#fff;border-radius:18px;box-shadow:var(--shadow-s);padding:16px 10px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px}
+.learn-item .ic{margin-bottom:6px}
+.learn-item small{font-size:11.5px;color:var(--accent);font-weight:700;line-height:1.4}
+.learn-item b{font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;font-size:15px;line-height:1.55}
+
+/* 理由カード（安心して受講／選ばれる理由） */
+.reason,.why-item{display:flex;gap:14px;align-items:flex-start;border:0;padding:16px 18px;border-radius:18px;background:#fff;box-shadow:var(--shadow-s)}
+.reason h3,.why-item h4{font-size:16px;line-height:1.5;margin:0 0 4px;padding:0;border:0;color:var(--ink);font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif}
+.reason p,.why-item p{font-size:14px;line-height:1.75}
+.why-item{margin-bottom:12px}
+.reason-photo{max-width:505px}
+
+/* 教材内容 */
+.mat-grid{list-style:none;padding:0;margin:10px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mat-grid li{display:flex;align-items:center;gap:8px;background:#fff8dc;border-radius:14px;padding:8px 10px;font-size:13.5px;font-weight:700;line-height:1.4}
+.mat-grid .ic{width:34px;height:34px;background:#e8f0e3}
+.mat-grid .ic svg{width:18px;height:18px}
+.mat-grid li.hl{grid-column:1/-1;background:var(--lemon)}
+.mat-grid li.hl small{display:block;font-size:11.5px;font-weight:500;color:var(--ink-soft)}
+.mat-grid li.hl em{display:inline-block;font-style:normal;font-size:11px;background:#fff;border-radius:999px;padding:0 8px;margin-top:2px;color:var(--accent)}
+li .mini{margin-left:0}
+
+/* ご受講の流れ */
+.flow li{gap:12px;padding:12px 16px}
+.flow li .no{position:static;width:auto;height:auto;background:none;color:var(--accent);font-size:12px;margin-left:auto;display:block;font-family:"Zen Maru Gothic",sans-serif}
+.flow li .no::before{content:"STEP "}
+.flow li b{font-size:15px}
+@media (min-width:820px){
+  .learn{grid-template-columns:repeat(3,1fr);gap:16px}
+  .reasons{grid-template-columns:1fr 1fr}
+  .why{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px}
+  .why-title{grid-column:1/-1}
+  .why-item{margin:0}
+  .flow li{flex-direction:column;text-align:center;padding:18px 10px}
+  .flow li .no{margin:0}
+}
+.mat-grid li:last-child{grid-column:1/-1}
+
+/* 長めの文章は自然な改行に。短い見出し・カードだけ、意味のまとまりで改行 */
+body{word-break:normal}
+h1,h2,h3,.sub,.learn-item b,.scene b,.flow b,.btn,.hero-course{word-break:auto-phrase}
+.reason p,.why-item p,.reason h3,.why-item h4{word-break:normal;text-wrap:pretty}
+.material .mat-grid{padding:0;margin:10px 0 0}
+.option .opt-name{font-weight:500}
+.option .opt-price{display:block;white-space:nowrap;font-size:20px;font-weight:700;font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;margin:0 0 6px}
