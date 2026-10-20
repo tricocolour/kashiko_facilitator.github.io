@@ -169,3 +169,13 @@ h1,h2{text-wrap:balance}
 @media (prefers-reduced-motion:reduce){
   .js .reveal{opacity:1;transform:none;transition:none}
 }
+
+/* 全角かぎカッコ：隣との余白を詰め、行頭では文字の左端にそろえる */
+body{text-spacing-trim:space-all}
+.ko{margin-left:-.5em}
+.kc{margin-right:-.5em}
+.ko+.kc,.kc+.ko{margin-left:-.5em}
+/* 囲い枠の中は行間を少し詰める */
+.card,.card-l,.voice,.info,.scene,.swap,.price-box,.faq details p,.step{line-height:1.7}
+.step p{line-height:1.6}
+.scene span{line-height:1.5}
