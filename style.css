@@ -1,12 +1,12 @@
 :root{
   --ink:#3A3328;
   --ink-soft:#5C5340;
-  --bg:#FFFDF4;
-  --bg-warm:#FFF6CC;
-  --lemon:#FFE98A;
-  --cta:#F2C500;
-  --accent:#8A6D00;
-  --brown:#7A2E14;
+  --bg:#fff9e3;
+  --bg-warm:#ffeea9;
+  --lemon:#ffde59;
+  --cta:#f65b39;
+  --accent:#587048;
+  --brown:#698458;
   --card:#FFFFFF;
   --shadow-s:0 4px 14px rgba(90,70,0,.10);
   --shadow-m:0 10px 28px rgba(90,70,0,.14);
@@ -32,8 +32,8 @@ h2{font-size:24px;line-height:1.55;margin-bottom:20px}
 .card-l{background:var(--card);border-radius:22px;box-shadow:var(--shadow-m);padding:24px}
 
 /* button */
-.btn{display:block;text-align:center;padding:17px 24px;border-radius:999px;background:var(--cta);color:var(--ink);font-weight:700;font-size:17px;text-decoration:none;box-shadow:0 6px 16px rgba(150,115,0,.32);transition:transform .15s,box-shadow .15s}
-.btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(150,115,0,.36)}
+.btn{display:block;text-align:center;padding:17px 24px;border-radius:999px;background:var(--cta);color:#fff;font-weight:700;font-size:18px;text-decoration:none;box-shadow:0 6px 16px rgba(246,91,57,.32);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(246,91,57,.38)}
 .btn-dark{background:var(--ink);color:#fff;box-shadow:0 6px 16px rgba(58,51,40,.3)}
 .badge{display:inline-block;padding:4px 14px;border-radius:999px;background:#fff;color:var(--brown);font-size:12px;font-weight:700;box-shadow:var(--shadow-s)}
 .badge-dark{background:var(--brown);color:#fff;box-shadow:none}
@@ -133,7 +133,7 @@ h2{font-size:24px;line-height:1.55;margin-bottom:20px}
 footer{padding:28px 0 100px;text-align:center;font-size:12px;color:var(--ink-soft)}
 
 /* sticky cta */
-.sticky{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,253,244,.94);backdrop-filter:blur(6px);box-shadow:0 -4px 16px rgba(90,70,0,.12);transform:translateY(110%);transition:transform .25s;z-index:10}
+.sticky{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,249,227,.94);backdrop-filter:blur(6px);box-shadow:0 -4px 16px rgba(90,70,0,.12);transform:translateY(110%);transition:transform .25s;z-index:10}
 .sticky.show{transform:none}
 .sticky .btn{padding:14px 20px;font-size:16px;max-width:520px;margin:0 auto}
 
@@ -174,8 +174,36 @@ h1,h2{text-wrap:balance}
 body{text-spacing-trim:space-all}
 .ko{margin-left:-.5em}
 .kc{margin-right:-.5em}
-.ko+.kc,.kc+.ko{margin-left:-.5em}
+span.ko,span.kc{display:inline!important}
+.kc+.ko{margin-left:0}
 /* 囲い枠の中は行間を少し詰める */
 .card,.card-l,.voice,.info,.scene,.swap,.price-box,.faq details p,.step{line-height:1.7}
 .step p{line-height:1.6}
 .scene span{line-height:1.5}
+
+/* 公式グラフィック */
+.steps{grid-template-columns:1fr;gap:16px}
+.step-img{width:100%;height:auto;border-radius:22px;filter:drop-shadow(0 8px 18px rgba(90,70,0,.16))}
+.approach-block{margin-top:40px}
+.approach-title{font-size:20px;line-height:1.6;text-align:center;margin-bottom:18px}
+.approaches{display:grid;grid-template-columns:1fr;gap:14px;max-width:420px;margin:0 auto}
+.approaches img{width:100%;height:auto;filter:drop-shadow(0 6px 14px rgba(90,70,0,.14))}
+@media (min-width:820px){
+  .steps{grid-template-columns:1fr 1fr;gap:24px}
+  .approach-title{font-size:24px}
+  .approaches{grid-template-columns:repeat(3,1fr);gap:20px;max-width:none}
+}
+
+.info span{text-wrap:pretty}
+
+/* 強調（アクセントカラー） */
+.em{color:#f65b39;font-weight:700}
+/* 「受けたあと、こう変わります」の見出し：太字＋マーカーライン */
+.change h3{font-size:18px;font-weight:700;color:var(--ink);line-height:1.6;margin-bottom:6px}
+.change h3 .mk{background:linear-gradient(transparent 58%,rgba(105,132,88,.55) 58%);padding:0 2px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+
+/* 最初の画面：色は「濃い茶＋オレンジ（キャッチのみ）」、文字サイズは3段階に整理 */
+.hero-course{margin:-8px 0 0;font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--ink-soft)}
+.hero .sub{font-size:16px;font-weight:500;line-height:1.8;color:var(--ink-soft)}
+.hero .note{font-size:12px}
+@media (min-width:820px){.hero .sub{font-size:18px}.hero-course{font-size:14px}}
