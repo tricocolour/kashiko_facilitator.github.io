@@ -326,3 +326,6 @@ h1,h2,h3,.sub,.learn-item b,.scene b,.flow b,.btn,.hero-course{word-break:auto-p
 .material .mat-grid{padding:0;margin:10px 0 0}
 .option .opt-name{font-weight:500}
 .option .opt-price{display:block;white-space:nowrap;font-size:20px;font-weight:700;font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;margin:0 0 6px}
+
+/* 枠の中の文章：右端をそろえる */
+.reason p,.why-item p{text-align:justify;text-justify:inter-character}
