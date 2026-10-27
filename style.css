@@ -161,7 +161,6 @@ footer{padding:28px 0 100px;text-align:center;font-size:12px;color:var(--ink-sof
 
 /* 見出し・ボタンなど短い太字は丸ゴシック、長文は Noto Sans JP */
 h1,h2,h3,.btn,.badge,.eyebrow,.price,.closing,.step .no,.scene b,.info b,.faq summary,.voice small,.change h3,.karuta .card strong,.step .t,.card strong{font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif;letter-spacing:.02em}
-h1,h2{text-wrap:balance}
 
 /* スクロールで、ふわっと現れる（JSが動かない時・動きを減らす設定の時は、最初から表示） */
 .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
@@ -194,7 +193,6 @@ span.ko,span.kc{display:inline!important}
   .approaches{grid-template-columns:repeat(3,1fr);gap:20px;max-width:none}
 }
 
-.info span{text-wrap:pretty}
 
 /* 強調（アクセントカラー） */
 .em{color:#f65b39;font-weight:700}
@@ -231,7 +229,6 @@ span.ko,span.kc{display:inline!important}
   .approach-note{text-align:center;font-size:15.5px;padding:22px 32px}
   .power-lead{font-size:22px}
 }
-.approach-lead,.power-lead{text-wrap:balance}
 
 /* 3つのアプローチ画像を小さく */
 .ap{max-width:280px}
@@ -274,7 +271,6 @@ li .mini{display:inline-block;margin-left:6px;padding:0 8px;border-radius:999px;
 }
 
 /* ---- アイコンと図形で見せる ---- */
-body{line-break:strict;word-break:auto-phrase;text-wrap:pretty}
 .ph{display:inline-block}
 .ic{flex:none;width:46px;height:46px;border-radius:50%;background:#e8f0e3;display:grid;place-items:center;color:var(--accent)}
 .ic svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
@@ -320,12 +316,92 @@ li .mini{margin-left:0}
 .mat-grid li:last-child{grid-column:1/-1}
 
 /* 長めの文章は自然な改行に。短い見出し・カードだけ、意味のまとまりで改行 */
-body{word-break:normal}
-h1,h2,h3,.sub,.learn-item b,.scene b,.flow b,.btn,.hero-course{word-break:auto-phrase}
-.reason p,.why-item p,.reason h3,.why-item h4{word-break:normal;text-wrap:pretty}
 .material .mat-grid{padding:0;margin:10px 0 0}
 .option .opt-name{font-weight:500}
 .option .opt-price{display:block;white-space:nowrap;font-size:20px;font-weight:700;font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;margin:0 0 6px}
 
 /* 枠の中の文章：右端をそろえる */
 .reason p,.why-item p{text-align:justify;text-justify:inter-character}
+
+/* ===== LP修正（2026-10-26） ===== */
+/* 文字まわり：段落は必ずボックスいっぱいの幅で折り返す */
+.cta-wrap>p,.cta-wrap>h1{align-self:stretch}
+.stack>p{align-self:stretch}
+
+/* 01 ファーストビュー */
+.hero .sub{white-space:nowrap;font-size:clamp(13px,4.05vw,16px);align-self:stretch}
+.hero-points{list-style:none;margin:2px 0 0;padding:0;display:flex;flex-direction:column;gap:10px;align-self:stretch}
+.hero-points li{display:flex;align-items:center;gap:12px;background:#fff;border-radius:16px;box-shadow:var(--shadow-s);padding:10px 14px;font-weight:700;font-size:14px;line-height:1.5}
+.hero-points .ic{width:38px;height:38px}
+.hero-points .ic svg{width:20px;height:20px}
+.hero-points li span:last-child{font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif}
+
+/* 02 */
+.worry-end{text-align:center}
+
+/* 03 */
+.swap .to{white-space:nowrap;font-size:clamp(13px,4vw,16px)}
+.swap .to{overflow:visible}
+
+/* 04 3つのアプローチ：補足文を画像の幅にそろえる */
+.ap{width:100%;max-width:280px}
+.ap-text{box-sizing:border-box;width:100%;padding:2px 0 2px 12px;text-align:justify}
+
+/* 08 受講生の声：属性ラベルを上に */
+.voice{display:flex;flex-direction:column;align-items:flex-start}
+.voice small{display:inline-block;margin:0 0 10px;padding:3px 12px;border-radius:999px;background:#e8f0e3;color:var(--accent);font-size:12px;font-weight:700;line-height:1.5}
+.voice p{font-size:15px}
+
+/* 10 日程：左揃え */
+.info{justify-content:flex-start;align-items:flex-start;gap:18px}
+.info b{flex:none;min-width:4.2em}
+.info span{text-align:left}
+
+/* 11 講師：写真は1/4（幅も高さも半分） */
+.profile-head{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.profile-head .profile-img{width:calc(50% - 8px);flex:none;border-radius:20px;box-shadow:0 8px 20px rgba(90,70,0,.2)}
+.profile-title{flex:1;min-width:0}
+.profile-title h2{font-size:21px;line-height:1.55}
+.profile-body{max-width:none}
+@media (min-width:820px){
+  .profile{max-width:760px;margin:0 auto}
+  .profile-head .profile-img{width:240px}
+  .profile-title h2{font-size:30px}
+}
+
+/* 12 協会・代表者メッセージ */
+.assoc-lead{font-size:15px}
+.message{width:100%}
+.message-label{display:inline-block;margin-bottom:12px;padding:3px 14px;border-radius:999px;background:var(--brown);color:#fff;font-size:12px;font-weight:700;font-family:"Zen Maru Gothic",sans-serif}
+.message-text{font-size:14.5px;line-height:1.85;text-align:justify}
+.message-sign{margin-top:12px;font-size:13px;color:var(--ink-soft);text-align:right}
+.assoc-row{align-items:flex-start}
+.assoc-row img{width:96px;height:120px}
+
+/* 13 */
+.one-line{white-space:nowrap;font-size:clamp(19px,6vw,24px)}
+
+/* 教材：オリジナル塗り絵の改行 */
+.mat-grid li .nl{display:block}
+
+/* ご受講の流れ：STEPバッジを左に */
+.flow li{gap:12px}
+.flow li b{flex:1;white-space:nowrap;font-size:15px}
+.step-badge{flex:none;width:46px;height:46px;border-radius:14px;background:var(--brown);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:18px;line-height:1}
+.step-badge small{font-size:9px;letter-spacing:.08em;margin-bottom:2px}
+.flow li .ic{width:38px;height:38px}
+.flow li .ic svg{width:20px;height:20px}
+@media (min-width:820px){
+  .flow li{flex-direction:column;text-align:center}
+  .flow li b{flex:none;white-space:normal}
+}
+
+/* FAQ：Q. を箇条書きのようにぶら下げる */
+.faq summary{padding-left:48px}
+.faq summary::before{content:"Q.";position:absolute;left:20px;top:16px;color:var(--accent);font-weight:700}
+
+/* フッター */
+footer p{line-height:1.8}
+
+.flow li .step-badge{width:46px;height:46px;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--brown);color:#fff;font-size:18px}
+.message-text{text-align:left}
